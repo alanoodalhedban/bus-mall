@@ -1,0 +1,45 @@
+*{
+    box-sizing: border-box;
+}
+
+h1{
+    text-align: center;
+    color: rgb(43, 19, 1);
+    border-style: solid;
+    
+}
+body{
+    background-color: rgb(143, 143, 44);
+}
+
+
+#one{
+    float:float;
+    width: 50%;
+}   
+
+img{
+    display: inline-block;
+    width: 40%;
+    height: 300px;
+    
+}
+ul{
+    width: 80%;
+   
+}
+
+li{
+    font-size: 20px;
+    font-weight:inherit;
+    list-style: none;
+   
+}
+button{
+    background-color: rgb(51, 31, 1);
+    color: lightgrey;
+    height: 50px;
+    width :100px;
+    align-items: center;
+    float: right;
+}
