@@ -1,4 +1,5 @@
 'use strict';
+let container=document.getElementById('one');
 let limg=document.getElementById('lef-img');
 let Mimg=document.getElementById('mid-img');
 let rimg=document.getElementById('right-img');
@@ -10,12 +11,13 @@ let Rindex;
 
 let rounds=25 ;
 let count=0;
-let nshown=0;
+
 
 function productImg(name,sourc){
   this.name=name;
   this.sourc=sourc;
   this.vote=0;
+  this.nshown=0;
   
   productImg.proImges.push(this);
 }
@@ -53,8 +55,12 @@ function display(){
 
   }
   limg.setAttribute('src',productImg.proImges[lindex].sourc);
+  productImg.proImges[lindex].nshown++;
   Mimg.setAttribute('src',productImg.proImges[Mindex].sourc);
+  productImg.proImges[Mindex].nshown++;
   rimg.setAttribute('src',productImg.proImges[Rindex].sourc);
+  productImg.proImges[Rindex].nshown++;
+  
 
 }
 display();
@@ -66,10 +72,11 @@ function Randomindex(){
 
 
 
-nshown++;
-limg.addEventListener('click',clicking);
-Mimg.addEventListener('click',clicking);
-rimg.addEventListener('click',clicking);
+
+// limg.addEventListener('click',clicking);
+// Mimg.addEventListener('click',clicking);
+// rimg.addEventListener('click',clicking);
+container.addEventListener('click',clicking);
 
 
 
@@ -89,9 +96,10 @@ function clicking(event){
   }
   else{
     button.addEventListener('click',showlist);
-    limg.removeEventListener('click',clicking);
-    Mimg.removeEventListener('click',clicking);
-    rimg.removeEventListener('click',clicking);
+    // limg.removeEventListener('click',clicking);
+    // Mimg.removeEventListener('click',clicking);
+    // rimg.removeEventListener('click',clicking);
+    container.removeEventListener('click',clicking);
 
 
   }
@@ -102,8 +110,9 @@ function showlist(){
   for(let i=0;i<productImg.proImges.length;i++){
     let li=document.createElement('li');
     ul.appendChild(li);
-    li.textContent=`${productImg.proImges[i].name} had ${productImg.proImges[i].vote} votes,and was seen ${nshown} times`;
+    li.textContent=`${productImg.proImges[i].name} had ${productImg.proImges[i].vote} votes,and was seen ${productImg.proImges[i].nshown} times`;
   }
+ 
 }
 
 
