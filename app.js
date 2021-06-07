@@ -45,25 +45,25 @@ new productImg('unicorn', 'img/unicorn.jpg');
 new productImg('usb', 'img/usb.jpg');
 new productImg('water', 'img/water-can.jpg');
 new productImg('wine', 'img/wine-glass.jpg');
-
+let plindex ,pmindex,prindex;
 function display() {
   // lindex = Randomindex();
   // Mindex = Randomindex();
   // Rindex = Randomindex();
-  let plindex ,pmindex,prindex;
+ 
   lindex = Randomindex();
   while (lindex === plindex|| lindex === pmindex || lindex === prindex) {
     lindex = Randomindex();
    
   }
-  plindex=lindex;
+  
 
   Mindex=Randomindex();
   while (Mindex === plindex|| Mindex === pmindex || Mindex === prindex ||Mindex===lindex) {
     Mindex = Randomindex();
    
   }
-  pmindex=Mindex;
+  
 
   Rindex=Randomindex();
   while (Rindex === plindex|| Rindex === pmindex || Rindex === prindex||Rindex===lindex ||Rindex===Mindex) {
@@ -71,7 +71,9 @@ function display() {
    
   }
   prindex=Rindex;
-
+  plindex=lindex;
+  pmindex=Mindex;
+  console.log(lindex,Mindex,Rindex);
   limg.setAttribute('src', productImg.proImges[lindex].sourc);
   productImg.proImges[lindex].nshown++;
   Mimg.setAttribute('src', productImg.proImges[Mindex].sourc);
