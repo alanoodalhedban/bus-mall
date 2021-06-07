@@ -63,9 +63,16 @@ function Randomindex(){
   let rand=Math.floor(Math.random() *productImg.proImges.length );
   return rand;
 }
+
+
+
+nshown++;
 limg.addEventListener('click',clicking);
 Mimg.addEventListener('click',clicking);
 rimg.addEventListener('click',clicking);
+
+
+
 
 function clicking(event){
   count++;
@@ -78,9 +85,7 @@ function clicking(event){
       productImg.proImges[Rindex].vote++;
     }
     display();
-    nshown++;
-
-
+    
   }
   else{
     button.addEventListener('click',showlist);
