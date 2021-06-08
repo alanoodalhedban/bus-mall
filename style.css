@@ -25,7 +25,10 @@ img{
     
 }
 ul{
-    width: 80%;
+    width: 40%;
+    background-color: rgb(243, 197, 197);
+  text-align: center;
+
    
 }
 

@@ -51,26 +51,26 @@ function display() {
   // Mindex = Randomindex();
   // Rindex = Randomindex();
 
- 
+
   lindex = Randomindex();
   while (lindex === plindex|| lindex === pmindex || lindex === prindex) {
     lindex = Randomindex();
-   
+
   }
-  
+
 
   Mindex=Randomindex();
   while (Mindex === plindex|| Mindex === pmindex || Mindex === prindex ||Mindex===lindex) {
     Mindex = Randomindex();
-   
+
   }
-  
-  
+
+
 
   Rindex=Randomindex();
   while (Rindex === plindex|| Rindex === pmindex || Rindex === prindex||Rindex===lindex ||Rindex===Mindex) {
     Rindex = Randomindex();
-   
+
   }
   prindex=Rindex;
   pmindex=Mindex;
@@ -119,7 +119,7 @@ function clicking(event) {
   }
   else {
     button.addEventListener('click', showlist);
-  
+
     container.removeEventListener('click', clicking);
 
 
@@ -135,7 +135,7 @@ function showlist() {
     arrOfVotes.push(productImg.proImges[i].vote);
     arrshown.push(productImg.proImges[i].nshown);
     let li = document.createElement('li');
-   
+
     ul.appendChild(li);
     li.textContent = `${productImg.proImges[i].name} had ${productImg.proImges[i].vote} votes,and was seen ${productImg.proImges[i].nshown} times`;
   }
