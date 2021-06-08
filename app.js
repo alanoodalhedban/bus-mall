@@ -15,6 +15,7 @@ let arrOfNames = [];
 let arrOfVotes = [];
 
 
+
 function productImg(name, sourc) {
   this.name = name;
   this.sourc = sourc;
@@ -83,7 +84,7 @@ function display() {
   rimg.setAttribute('src', productImg.proImges[Rindex].sourc);
   productImg.proImges[Rindex].nshown++;
 
-console.log(lindex,Mindex,Rindex);
+  console.log(lindex,Mindex,Rindex);
 
 }
 display();
@@ -124,8 +125,17 @@ function clicking(event) {
 
 
   }
-
+  storeproduct();
 }
+
+
+function storeproduct(){
+  localStorage.setItem('all products',JSON.stringify(productImg.proImges));
+}
+function gitproduct(){
+  let gitdata =JSON.parse(localStorage.getItem('all products'));
+}
+
 
 let arrshown = [];
 
@@ -139,6 +149,7 @@ function showlist() {
     ul.appendChild(li);
     li.textContent = `${productImg.proImges[i].name} had ${productImg.proImges[i].vote} votes,and was seen ${productImg.proImges[i].nshown} times`;
   }
+ 
   newChart();
 }
 
@@ -171,7 +182,7 @@ function newChart() {
   });
 }
 
-
+gitproduct();
 
 
 
