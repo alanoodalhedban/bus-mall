@@ -46,3 +46,19 @@ button{
     align-items: center;
     float: right;
 }
+div {
+    text-align: center;
+    font-family: 'Pattaya', sans-serif;
+    width: 200px;
+    height: 50px;
+    background-color: red;
+    position: relative;
+    animation: myfirst 5s linear 2s infinite alternate;
+  }
+  @keyframes myfirst {
+    0%   {background-color:red; left:1000px; top:0px;}
+    25%  {background-color:yellow; left:1000px; top:0px;}
+    50%  {background-color:blue; left:1000px; top:200px;}
+    75%  {background-color:green; left:1000px; top:200px;}
+    100% {background-color:red; left:1000px; top:0px;}
+  }  
