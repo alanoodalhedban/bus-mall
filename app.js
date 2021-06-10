@@ -127,7 +127,7 @@ function clicking(event) {
   }
   storeproduct();
 }
-
+// add local storage 
 
 function storeproduct(){
   localStorage.setItem('all products',JSON.stringify(productImg.proImges));
@@ -153,7 +153,7 @@ function showlist() {
   newChart();
 }
 
-
+// add chart
 function newChart() {
   console.log(arrshown +'test');
   console.log(arrOfVotes+'test');
